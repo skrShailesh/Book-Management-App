@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Store</title>
+<style>
+/* Inline CSS styles */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #e4e3e8;
+  padding: 0.375rem;
+  font-family: Poppins, sans-serif;
+  position: relative;
+}
+
+button,
+a {
+  all: unset;
+  font: inherit;
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  width: 5rem;
+  height: calc(100vh - 0.75rem);
+  background-color: #ffffff;
+  padding: 1rem 0.75rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: width 500ms ease;
+}
+
+body.active nav {
+  width: 15rem;
+}
+
+.sidebar-header,
+.sidebar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-links {
+  flex-direction: column;
+  margin-bottom: auto;
+  gap: 0.6rem;
+  padding-top: 1.5rem;
+}
+
+nav > .sidebar-links {
+  border-top: 1px solid rgb(211, 211, 211);
+}
+
+body.active .sidebar-links,
+body.active .sidebar-header,
+body.active .user-profile {
+  justify-content: start;
+  align-items: stretch;
+}
+
+.link {
+  display: flex;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  gap: 1.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+body.active .hidden {
+  display: inline;
+}
+
+.link:hover,
+.link.active:hover {
+  background-color: #e4e4e8;
+}
+
+.link.active {
+  background-color: #f4f4f6;
+}
+
+.link > img {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-bottom .sidebar-links {
+  padding-bottom: 1.5rem;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: -50px;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.25s ease;
+}
+
+body.active .toggle-btn {
+  transform: rotate(180deg);
+}
+
+.user-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgb(211, 211, 211);
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: scale 0.2s ease;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-avatar:hover {
+  scale: 1.1;
+}
+
+.user-details {
+  align-self: center;
+  overflow: hidden;
+}
+
+.user-details .username {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.user-details .user-email {
+  font-size: 0.8rem;
+}
+
+container{
+text-align: center;
+}
+
+</style>
+
+
+
+
+</head>
+<body class="active">
+<nav>
+  <div class="sidebar-header">
+    <h2 class="hidden">Book Store</h2>
+    <button class="toggle-btn">
+      <img src="./assets/expand.svg" alt="expand button">
+    </button>
+  </div>
+  <div class="sidebar-links" href="/">
+    <a class="link active">
+      <img src="./assets/home.svg" alt="">
+      <span class="hidden">Home</span>
+    </a>
+    
+        <a class="link">
+      <img src="./assets/dashboard.svg" alt="">
+      <span class="hidden">My Books</span>
+    </a>
+    
+    <a class="link" href="book_register">
+      <img src="./assets/tasks.svg" alt="">
+      <span class="hidden">Add New Book</span>
+    </a>
+    <a class="link"href="available_books">
+      <img src="./assets/dashboard.svg" alt="">
+      <span class="hidden">Available Books</span>
+    </a>
+    <!--  <a class="link">
+      <img src="./assets/projects.svg" alt="">
+      <span class="hidden">Projects</span>
+    </a> -->
+    
+  </div>
+  <div class="sidebar-bottom">
+    <div class="sidebar-links">
+      <a class="link">
+        <img src="./assets/settings.svg" alt="">
+        <span class="hidden">Settings</span>
+      </a>
+    </div>
+    <div class="user-profile">
+      <div class="user-avatar">
+        <img src="/images/profile-pic.jpg" >
+      </div>
+      <div class="user-details hidden">
+        <p class="username">Shailesh Kumar</p>
+        <p class="user-email">skrshailesh05@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-5" style="text-align: center;margin-left: 3in; margin-top: 0.5in;margin-right: 0.5in;">
+    <h1>WELCOME TO NEW BOOK STORE</h1>
+    <h6 style="text-align: center;">Lorem ipsum dolor sit amet . 
+        The graphic and typographic operators know this well, in reality all the professions 
+        dealing with the universe of communication have a stable relationship with these words,
+        but what is it? Lorem ipsum is a dummy text without any sense. It is a sequence of Latin 
+        words that, as they are positioned, do not form sentences with a complete sense, but give 
+        life to a test text useful to fill spaces that will subsequently be occupied from ad hoc 
+        texts composed by communication professionals. It is certainly the most famous placeholder
+        text even if there are different versions distinguishable from the order in which the
+        Latin words are repeated.
+    </h6>
+    <img src="/images/bookstore_logo.png" width="400px" style="display: block; margin: 0 auto;margin-top: 0.5in"/>
+</div>
+
+
+<script type="text/javascript">
+const sidebarBtn = document.querySelector(".toggle-btn");
+const sidebar = document.querySelector("aside");
+
+sidebarBtn.addEventListener("click", () => {
+  document.body.classList.toggle("active");
+});
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
