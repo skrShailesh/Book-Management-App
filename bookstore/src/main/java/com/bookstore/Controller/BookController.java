@@ -60,13 +60,31 @@ public class BookController {
 
 	}
 	
+//	@RequestMapping("/mylist/{id}")
+//	public String getMyList(@PathVariable("id") int id) {
+//		Book b=service.getBookById(id);
+//		MyBookList mb=new MyBookList(b.getId(),b.getName(),b.getAuthor(),b.getPrice());
+//		myBookService.saveMyBooks(mb);
+//		return "redirect:/my_books";
+//
+//	}
 	@RequestMapping("/mylist/{id}")
 	public String getMyList(@PathVariable("id") int id) {
 		Book b=service.getBookById(id);
 		MyBookList mb=new MyBookList(b.getId(),b.getName(),b.getAuthor(),b.getPrice());
 		myBookService.saveMyBooks(mb);
 		return "redirect:/my_books";
-
 	}
 	
+	@RequestMapping("/editBook/{id}")
+	public String editBook(@PathVariable("id") int id,Model model) {
+		Book b=service.getBookById(id);
+		model.addAttribute("book",b);
+		return "bookEdit";
+	}
+	@RequestMapping("/deleteBook/{id}")
+	public String deleteBook(@PathVariable("id")int id) {
+		service.deleteById(id);
+		return "redirect:/available_books";
+	}
 }
