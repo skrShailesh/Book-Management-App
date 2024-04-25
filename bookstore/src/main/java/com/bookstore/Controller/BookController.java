@@ -60,14 +60,7 @@ public class BookController {
 
 	}
 	
-//	@RequestMapping("/mylist/{id}")
-//	public String getMyList(@PathVariable("id") int id) {
-//		Book b=service.getBookById(id);
-//		MyBookList mb=new MyBookList(b.getId(),b.getName(),b.getAuthor(),b.getPrice());
-//		myBookService.saveMyBooks(mb);
-//		return "redirect:/my_books";
-//
-//	}
+
 	@RequestMapping("/mylist/{id}")
 	public String getMyList(@PathVariable("id") int id) {
 		Book b=service.getBookById(id);
